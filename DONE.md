@@ -1,4 +1,6 @@
- 
+
+// This is Kacey's done list not mine
+
 // DONE (Jim) go over debugger setup with Kacey
 
 // DONE (Kacey) make sure your github repo folder is on the Desktop (not inside some other folder)
