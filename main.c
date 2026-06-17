@@ -1,11 +1,11 @@
-#include "kac.c"
+#include "aidan.c"
 #include "tui.c"
 
 // BIG QUESTION
 // physics -?-> graphics
 
 int main() {
- kac_init();
+ al_init();
 
  // physics state
  // TODO make all of these variables double's

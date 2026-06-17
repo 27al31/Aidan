@@ -5,14 +5,14 @@ setlocal ENABLEDELAYEDEXPANSION
 
 for %%a in (%*) do set "argv[%%a]=1"
 
-SET KAC_DEBUG=
+SET AL_DEBUG=
 IF defined argv[--debug-rad] (
- set KAC_DEBUG=/DKAC_DEBUG
+ set AL_DEBUG=/DAL_DEBUG
 )
 
 cl ^
 -Od ^
-!KAC_DEBUG! ^
+!AL_DEBUG! ^
 /EHsc /d2FH4- /MDd /nologo -fp:except -GR- -EHa- -FC -Z7 ^
 -W4 -WX -wd4201 -wd4127 -wd4244 ^
 %1 ^
