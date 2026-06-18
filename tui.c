@@ -92,7 +92,7 @@ void tui_flip(TUI *tui) {
  }
 }
 
-void tui_begin_frame(TUI *tui) {
+void tui_begin_frame(TUI *tui) { // change to add Tui color
  SLEEP(100);
  tui_move_cursor_to_top_left();
  tui_flip(tui);
