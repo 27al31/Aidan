@@ -9,6 +9,7 @@ typedef enum {
  TUIColorGreen,
  TUIColorBlue,
  TUIColorAqua,
+ TUIColorWhite,
 } TUIColor;
 
 typedef struct {
@@ -30,6 +31,8 @@ void tui_set_bg_color(TUIColor color) {
   printf("\033[44m"); 
  } else if (color == TUIColorAqua) {
   printf("\033[46m"); 
+ } else if (color == TUIColorWhite) {
+  printf("\033[47m");
  } else {
   ASSERT(0);
  }
@@ -81,6 +84,7 @@ void tui_set_pixel_color(TUI *tui, int x, int y, TUIColor color) {
 }
 
 void tui_flip(TUI *tui) {
+    system("clear");
  for (int row = 0; row < tui->num_rows; ++row) {
   for (int col = 0; col < tui->num_cols; ++col) {
    int pixel_index = _tui_get_pixel_index_row_col(tui, row, col);
@@ -92,9 +96,9 @@ void tui_flip(TUI *tui) {
  }
 }
 
-void tui_begin_frame(TUI *tui) { // change to add Tui color
+void tui_begin_frame(TUI *tui, TUIColor color) {
  SLEEP(100);
  tui_move_cursor_to_top_left();
  tui_flip(tui);
- tui_clear(tui, TUIColorBlue);
+ tui_clear(tui, color);
 }
